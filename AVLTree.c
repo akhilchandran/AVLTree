@@ -133,16 +133,11 @@ int main()
 {
 	struct node *avl = NULL;
 	struct node *nod = newnode(64);
-	printf("asd\n");
 	insert(&avl, nod);
 	nod = newnode(80);
 	insert(&avl, nod);
-	printTreeStrct(avl);
-	printf("asd\n");
 	nod = newnode(96);
 	insert(&avl, nod);
-		printTreeStrct(avl);
-	printf("asd\n");
 	nod = newnode(100);
 	insert(&avl, nod);
 	nod = newnode(51);
@@ -157,6 +152,6 @@ int main()
 	insert(&avl, nod);
 	nod = newnode(9);
 	insert(&avl, nod);
-	printf("asd\n");
 	printTreeStrct(avl);
+	printf("\n");
 }
