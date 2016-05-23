@@ -100,7 +100,7 @@ void plusOnetoMinusOne(struct node **avltreeref)
 	else if(leftnode->balancefactor == -1){
 		minusOnetoPlusOne(&leftnode);
 	}
-	else if(leftnode->balancefactor == -1){
+	else if(leftnode->balancefactor == 1){
 		(*avltreeref)->balancefactor = -1;
 		leftnode->balancefactor = -1;
 	}
@@ -116,6 +116,7 @@ struct node *newnode(int data)
 	nod->balancefactor = 0;
 	nod->left = NULL;
 	nod->right = NULL;
+	return nod;
 }
 
 void printTreeStrct(struct node *tree)
@@ -123,7 +124,7 @@ void printTreeStrct(struct node *tree)
 	if(tree != NULL){
 		printf("{");
 		printTreeStrct(tree->left);
-		printf("(%d)",tree->data);
+		printf("(%d-%d)",tree->data,tree->balancefactor);
 		printTreeStrct(tree->right);
 		printf("}");
 	}
@@ -151,6 +152,8 @@ int main()
 	nod = newnode(15);
 	insert(&avl, nod);
 	nod = newnode(9);
+	insert(&avl, nod);
+	nod = newnode(8);
 	insert(&avl, nod);
 	printTreeStrct(avl);
 	printf("\n");
